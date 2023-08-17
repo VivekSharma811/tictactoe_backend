@@ -1,5 +1,6 @@
 package com.hypheno
 
+import com.hypheno.models.TicTacToeGame
 import com.hypheno.plugins.*
 import io.ktor.server.application.*
 
@@ -8,8 +9,9 @@ fun main(args: Array<String>) {
 }
 
 fun Application.module() {
+    val game = TicTacToeGame()
     configureSockets()
     configureSerialization()
     configureMonitoring()
-    configureRouting()
+    configureRouting(game)
 }
