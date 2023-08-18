@@ -4,9 +4,10 @@ val kotlin_version: String by project
 val logback_version: String by project
 
 plugins {
-    kotlin("jvm") version "1.9.0"
+    kotlin("jvm") version "1.7.0"
     id("io.ktor.plugin") version "2.3.3"
-    id("org.jetbrains.kotlin.plugin.serialization") version "1.9.0"
+    kotlin("plugin.serialization") version "1.7.0"
+//    id("org.jetbrains.kotlin.plugin.serialization") version "1.7.0"
 }
 
 group = "com.hypheno"
@@ -27,7 +28,7 @@ dependencies {
     implementation("io.ktor:ktor-server-core-jvm")
     implementation("io.ktor:ktor-server-websockets-jvm")
     implementation("io.ktor:ktor-server-content-negotiation-jvm")
-    implementation("io.ktor:ktor-serialization-kotlinx-json-jvm")
+    implementation("io.ktor:ktor-serialization-kotlinx-json-jvm:${ktor_version}")
     implementation("io.ktor:ktor-server-call-logging-jvm")
     implementation("io.ktor:ktor-server-netty-jvm")
     implementation("ch.qos.logback:logback-classic:$logback_version")
